@@ -89,7 +89,7 @@ IF(NOT KDE)
 	IF(MSVC)
 		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DQT_NO_EXCEPTIONS -Zc:wchar_t-")
 	ELSE(MSVC)
-		SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-exceptions -DQT_NO_EXCEPTIONS -fno-check-new -fno-common")
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wnon-virtual-dtor -Wno-long-long -Wundef -Wcast-align -Wchar-subscripts -Wall -W -Wpointer-arith -Wformat-security -fno-exceptions -DQT_NO_EXCEPTIONS -fno-check-new -fno-common -Wno-undef -Wno-reorder -Wno-unused-parameter")
 	ENDIF(MSVC)
 	IF(NOT WIN32 AND NOT APPLE)
 #		SET(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--fatal-warnings -lc -Wl,--disable-auto-import")
@@ -142,8 +142,8 @@ FIND_PACKAGE(Graphviz REQUIRED)
 # include source tree
 #
 ######################
-SET(libqgv_SOURCE_DIR ${CMAKE_SOURCE_DIR}/QGVCore)
-SET(libqgv_BINARY_DIR ${CMAKE_BINARY_DIR}/QGVCore)
+SET(libqgv_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/QGVCore)
+SET(libqgv_BINARY_DIR ${CMAKE_CURRENT_BINARY_DIR}/QGVCore)
 ADD_SUBDIRECTORY(QGVCore)
 ADD_SUBDIRECTORY(Sample)
 
