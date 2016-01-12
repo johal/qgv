@@ -30,7 +30,7 @@ SET(${PROJECT_NAME}_VERSION
 # INCLUDE(CTest)
 
 # Extending the Module path with the local module path of desuto
-SET(CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/modules )
+SET(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake/modules )
 
 OPTION(BUILD_DEV "Build development version of qgv" ON)
 OPTION(BUILD_DEBUG "Build in debug mode" ON)
